@@ -30,6 +30,7 @@ switch (command) {
             //returns the content of the path
             const decompressedBuffer = zlib.unzipSync(new Uint8Array(blob));
             const stringdata = decompressedBuffer.toString().split('\0')[1];
+            //split method returns an array taking input string and takes the second part of the array.
             process.stdout.write(stringdata);
         }
         break;
